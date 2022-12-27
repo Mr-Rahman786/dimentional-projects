@@ -9,7 +9,7 @@ const Review = ({ revie }) => {
                     <p>{ review}</p>
                     <div className="avatar online">
                         <div className="w-24 rounded-full">
-                            <img src={img} alt=''/>
+                            <img src={img} alt='' />
                         </div>
                     </div>
                 </div>

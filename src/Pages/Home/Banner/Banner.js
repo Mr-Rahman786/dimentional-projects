@@ -3,7 +3,7 @@ import banner from '../../../assets/images/chair.png'
 import PrimaryButton from '../../../Components/PrimaryButton/PrimaryButton';
 const Banner = () => {
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero py-20 my-20">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img src={banner} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                 <div className='w-1/2'>
