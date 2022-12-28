@@ -1,20 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css'
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+
 const Login = () => {
+    const { register, handleSubmit } = useForm();
+    const [data, setData] = useState("");
+
+    const handleLogin = data => {
+        console.log(data)
+    }
+
     return (
-        <div>
+        <div className=''>
             <div className='body'>
                 <div className='box'>
-                    <div className="form">
+                    <form onSubmit={handleSubmit(handleLogin)} className="form">
                         <h2>Sign In</h2>
                         <div className="inputBox">
-                            <input type="email" name="email" id="" required />
+                            <input {...register("email")} type="email" name="email" id="" required />
                             <span> Enter Your Email</span>
                             <i></i>
                         </div>
                         <div className="inputBox">
-                            <input type="password" name="password" id="" required />
+                            <input {...register("password")} type="password" name="password" id="" required />
                             <span>Enter Password</span>
                             <i></i>
                         </div>
@@ -22,10 +32,16 @@ const Login = () => {
                             <Link>Forget Password</Link>
                             <Link>Signup</Link>
                         </div>
-                        <input type="submit" value="login" />
-                    </div>
+                        <button><input className='w-full text-center text-slate-300' type="submit" value="login" /></button>
+                        <div className='text-center mt-5'>
+                            <h3 className='text-white'>OR</h3>
+                            <button className='text-white btn btn-outline w-full p-4 rounded'>Continue With Google</button>
+                        </div>
+                    </form>
+                    
                 </div>
             </div>
+    	   
         </div>
     );
 };
